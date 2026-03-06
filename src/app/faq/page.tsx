@@ -11,7 +11,7 @@ export default function FAQPage() {
 
   const questions = [
     {
-      q: 'How do I get in touch with MA Collection?',
+      q: 'How do I get in touch with MA Collective?',
       a: 'You can reach us via the Contact page, email us at hello@aficlothing.com, or send us a message on WhatsApp. Our team responds within 24 hours on business days.',
     },
     {

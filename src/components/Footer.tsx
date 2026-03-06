@@ -46,8 +46,11 @@ export default function Footer() {
                 <a href="https://www.facebook.com/macollection" target="_blank" rel="noreferrer"><i className="flaticon-facebook-app-symbol"></i></a>
                 <a href="https://www.twitter.com/macollection" target="_blank" rel="noreferrer"><i className="flaticon-twitter"></i></a>
                 <a href="https://www.instagram.com/macollection" target="_blank" rel="noreferrer"><i className="flaticon-instagram"></i></a>
-                <a href="https://www.tiktok.com/@macollection" target="_blank" rel="noreferrer"><i className="flaticon-video"></i></a>
-                <a href="https://www.youtube.com/@macollection" target="_blank" rel="noreferrer"><i className="flaticon-youtube"></i></a>
+                <a href="https://www.tiktok.com/@macollection" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '48px', height: '48px', borderRadius: '50%', border: '1px solid #fff' }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
@@ -77,7 +80,7 @@ export default function Footer() {
                   display: 'block',
                 }}
               >
-                MA Collection
+                MA Collective
               </span>
             </Link>
           </div>
@@ -85,7 +88,7 @@ export default function Footer() {
 
         <div className="ul-footer-bottom">
           <p className="copyright-txt">
-            Copyright {new Date().getFullYear()} © MA Collection — Made with care in Accra, Ghana
+            Copyright {new Date().getFullYear()} © MA Collective — Made with care in Accra, Ghana
           </p>
         </div>
       </div>
