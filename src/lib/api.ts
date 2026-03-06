@@ -11,6 +11,7 @@ export interface Product {
   uuid: string;
   name: string;
   slug: string;
+  costPrice: number;        // GHS – actual cost price
   sellingPrice: number;     // GHS
   originalPrice?: number;   // GHS – before discount
   currency: string;
