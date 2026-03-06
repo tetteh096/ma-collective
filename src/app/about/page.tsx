@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main>
-      {/* BREADCRUMB */}
+      {/* BREADCRUMB FEAT */}
       <div className="ul-container">
         <div className="ul-breadcrumb">
           <h2 className="ul-breadcrumb-title">About us</h2>
