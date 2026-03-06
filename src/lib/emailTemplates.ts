@@ -18,7 +18,7 @@ function layout(params: {
   bodyHtml: string;
   footerHtml?: string;
 }) {
-  const brand = params.brand ?? 'MA Collective';
+  const brand = params.brand ?? 'Ayekwa Collective';
   const preheader = params.preheader ?? '';
   const year = new Date().getFullYear();
 

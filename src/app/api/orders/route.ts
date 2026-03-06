@@ -243,7 +243,7 @@ export async function POST(request: NextRequest) {
           tasks.push(
             sendEmail({
               to: customerTo,
-              subject: `Order received — MA Collective (${orderWithNumbers.uuid})`,
+              subject: `Order received — Ayekwa Collective (${orderWithNumbers.uuid})`,
               text:
                 `Thanks for your order!\n\n` +
                 baseText +

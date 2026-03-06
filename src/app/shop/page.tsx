@@ -3,7 +3,7 @@ import { getCategories } from '@/lib/api';
 import type { Category } from '@/lib/api';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'Shop — MA Collective' };
+export const metadata = { title: 'Shop — Ayekwa Collective' };
 
 interface Props {
   searchParams: Promise<{ category?: string; q?: string; page?: string; sort?: string }>;

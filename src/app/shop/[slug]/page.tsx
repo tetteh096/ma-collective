@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const product = await getProductBySlug(slug).catch(() => null);
   return {
-    title: product ? `${product.name} — MA Collective` : 'Product Not Found',
-    description: product?.description ?? 'Shop authentic Ghanaian fashion at MA Collective',
+    title: product ? `${product.name} — Ayekwa Collective` : 'Product Not Found',
+    description: product?.description ?? 'Shop authentic Ghanaian fashion at Ayekwa Collective',
     openGraph: product ? {
       title: product.name,
       description: product.description ?? '',

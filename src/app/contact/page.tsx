@@ -98,7 +98,7 @@ export default function ContactPage() {
           allowFullScreen={true}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="MA Collective Location"
+          title="Ayekwa Collective Location"
         ></iframe>
       </div>
 

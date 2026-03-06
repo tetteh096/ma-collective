@@ -24,7 +24,7 @@ export default function DiscoverSection() {
       <div className="ul-container">
         <div className="ul-discover-inner">
           <div className="ul-discover-heading">
-            <span className="ul-discover-label">Why MA Collective</span>
+            <span className="ul-discover-label">Why Ayekwa Collective</span>
             <h2 className="ul-discover-title">Clothing for work, life & every moment</h2>
             <p className="ul-discover-sub">
               Pieces you can rely on — quality fabrics, modern fits, and styles that work from Monday to Sunday.

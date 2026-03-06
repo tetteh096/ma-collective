@@ -4,7 +4,7 @@ import type { Category } from '@/lib/api';
 import ProductCard from '@/components/ProductCard';
 
 export const dynamic = 'force-dynamic';
-export const metadata = { title: 'New Arrivals — MA Collective' };
+export const metadata = { title: 'New Arrivals — Ayekwa Collective' };
 
 interface Props {
   searchParams: Promise<{ page?: string; sort?: string }>;

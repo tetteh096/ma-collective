@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'About Us | MA Collective',
-  description: 'Learn about MA Collective — real, wearable fashion for every moment.',
+  title: 'About Us | Ayekwa Collective',
+  description: 'Learn about Ayekwa Collective — real, wearable fashion for every moment.',
 };
 
 export default function AboutPage() {
@@ -27,7 +27,7 @@ export default function AboutPage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="https://images.pexels.com/photos/5698854/pexels-photo-5698854.jpeg?auto=compress&cs=tinysrgb&w=1400"
-            alt="MA Collective clothing"
+            alt="Ayekwa Collective clothing"
           />
         </div>
       </div>
@@ -39,9 +39,9 @@ export default function AboutPage() {
             <div className="col">
               <div className="ul-about-txt">
                 <span className="ul-section-sub-title">About us</span>
-                <h2 className="ul-section-title">We are MA Collective</h2>
+                <h2 className="ul-section-title">We are Ayekwa Collective</h2>
                 <p>
-                  MA Collective was founded with a simple belief: every woman deserves clothes that actually fit
+                  Ayekwa Collective was founded with a simple belief: every woman deserves clothes that actually fit
                   her life — not just her body, but her day. Whether that&apos;s a meeting, a market run, a
                   weekend outing, or a quiet evening dinner, we have something for every moment.
                 </p>
@@ -58,7 +58,7 @@ export default function AboutPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="MA Collective clothing styles"
+                  alt="Ayekwa Collective clothing styles"
                 />
               </div>
             </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   From our first collection of everyday basics to our now-expansive range of workwear, casual,
-                  and occasion wear, MA Collective has always put the customer first. We listen, we evolve, and
+                  and occasion wear, Ayekwa Collective has always put the customer first. We listen, we evolve, and
                   we deliver clothes that make people feel confident every single day.
                 </p>
               </div>

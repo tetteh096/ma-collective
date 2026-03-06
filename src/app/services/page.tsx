@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Services | MA Collective',
+  title: 'Services | Ayekwa Collective',
   description: 'Retail and wholesale fashion services. Quality clothing for work, casual and occasion wear across Ghana.',
 };
 
@@ -27,7 +27,7 @@ export default function ServicesPage() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="https://images.pexels.com/photos/3735641/pexels-photo-3735641.jpeg?auto=compress&cs=tinysrgb&w=1400"
-            alt="MA Collective clothing display"
+            alt="Ayekwa Collective clothing display"
           />
         </div>
       </div>
@@ -39,9 +39,9 @@ export default function ServicesPage() {
             <div className="col">
               <div className="ul-about-txt">
                 <span className="ul-section-sub-title">Services</span>
-                <h2 className="ul-section-title">Why MA Collective</h2>
+                <h2 className="ul-section-title">Why Ayekwa Collective</h2>
                 <p>
-                  MA Collective was founded with a simple belief: every woman deserves clothes that actually fit
+                  Ayekwa Collective was founded with a simple belief: every woman deserves clothes that actually fit
                   her life, not just her body, but her day. Whether that&apos;s a meeting, a market run, a
                   weekend outing, or a quiet evening dinner, we have something for every moment.
                 </p>
@@ -58,7 +58,7 @@ export default function ServicesPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://images.pexels.com/photos/6192463/pexels-photo-6192463.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="MA Collective fashion"
+                  alt="Ayekwa Collective fashion"
                 />
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function ServicesPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://images.pexels.com/photos/1661443/pexels-photo-1661443.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="MA Collective store"
+                  alt="Ayekwa Collective store"
                 />
               </div>
             </div>

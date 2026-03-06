@@ -44,7 +44,7 @@ export default function Header() {
                       textTransform: 'uppercase',
                     }}
                   >
-                    MA
+                    AYEKWA
                   </span>
                   <span
                     style={{

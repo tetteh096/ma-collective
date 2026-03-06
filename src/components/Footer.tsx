@@ -80,7 +80,7 @@ export default function Footer() {
                   display: 'block',
                 }}
               >
-                MA Collective
+                Ayekwa Collective
               </span>
             </Link>
           </div>
@@ -88,7 +88,7 @@ export default function Footer() {
 
         <div className="ul-footer-bottom">
           <p className="copyright-txt">
-            Copyright {new Date().getFullYear()} © MA Collective — Made with care in Accra, Ghana
+            Copyright {new Date().getFullYear()} © Ayekwa Collective — Made with care in Accra, Ghana
           </p>
         </div>
       </div>

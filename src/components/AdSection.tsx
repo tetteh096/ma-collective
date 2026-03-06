@@ -7,7 +7,7 @@ export default function AdSection() {
         <div className="ul-inner-container">
           <div className="ul-ad-content">
             <div className="ul-ad-txt">
-              <span className="ul-ad-sub-title">Shop MA Collective</span>
+              <span className="ul-ad-sub-title">Shop Ayekwa Collective</span>
               <h2 className="ul-section-title">Quality fashion for work, weekend & every day</h2>
               <div className="ul-ad-categories">
                 <span className="category"><span><i className="flaticon-check-mark"></i></span>Dresses</span>

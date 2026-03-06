@@ -37,7 +37,7 @@ function getTransport() {
 }
 
 export async function sendEmail(args: SendEmailArgs) {
-  const from = getEnv('MAIL_FROM') ?? 'MA Collective <noreply@aficlothing.com>';
+  const from = getEnv('MAIL_FROM') ?? 'Ayekwa Collective <noreply@aficlothing.com>';
   const transport = getTransport();
 
   return transport.sendMail({

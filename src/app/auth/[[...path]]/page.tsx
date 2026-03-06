@@ -37,7 +37,7 @@ function AuthPageInner({ pathname }: { pathname: string }) {
       <div className="auth-container">
         <div className="auth-header">
           <h1 className="auth-title">
-            <span className="brand-name">MA Collective</span> Admin
+            <span className="brand-name">Ayekwa Collective</span> Admin
           </h1>
           <p className="auth-subtitle">Manage your fashion store</p>
         </div>

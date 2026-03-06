@@ -4,12 +4,12 @@ import Providers from '@/components/Providers';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'MA Collective — Dressed for Work, Life & Every Moment',
+  title: 'Ayekwa Collective — Dressed for Work, Life & Every Moment',
   description:
-    'MA Collective offers real, wearable fashion for women — from office-ready looks to weekend outings and everyday essentials. Shop quality clothing designed for how you actually live.',
+    'Ayekwa Collective offers real, wearable fashion for women — from office-ready looks to weekend outings and everyday essentials. Shop quality clothing designed for how you actually live.',
   keywords: 'women clothing Ghana, workwear Accra, everyday fashion, casual wear, outfits Ghana, ladies fashion',
   openGraph: {
-    title: 'MA Collective',
+    title: 'Ayekwa Collective',
     description: 'Real clothes for work, outings & everyday life.',
     locale: 'en_GH',
     type: 'website',
