@@ -57,7 +57,7 @@ export default function Reviews() {
       <div className="ul-section-heading text-center justify-content-center">
         <div>
           <span className="ul-section-sub-title">Customer Reviews</span>
-          <h2 className="ul-section-title">What Ghanaians Are Saying</h2>
+          <h2 className="ul-section-title">What Our Customers Are Saying</h2>
           <p className="ul-reviews-heading-descr">Trusted by thousands of customers across Ghana</p>
         </div>
       </div>

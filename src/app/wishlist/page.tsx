@@ -9,7 +9,7 @@ export default function WishlistPage() {
   const { addItem, openCart } = useCart();
 
   function moveToCart(item: typeof items[0]) {
-    addItem({ id: item.id, slug: item.slug, name: item.name, price: item.price, image: item.image, quantity: 1 });
+    addItem({ id: item.id, slug: item.slug, name: item.name, price: item.price, costPrice: item.costPrice, image: item.image, quantity: 1 });
     remove(item.id);
     openCart();
   }

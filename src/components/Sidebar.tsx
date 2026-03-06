@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Sidebar() {
@@ -7,8 +6,8 @@ export default function Sidebar() {
       {/* header */}
       <div className="ul-sidebar-header">
         <div className="ul-sidebar-header-logo">
-          <Link href="/">
-            <Image src="/assets/img/logo.svg" alt="logo" width={140} height={40} className="logo" style={{ height: 'auto' }} />
+          <Link href="/" style={{ fontSize: '20px', fontWeight: 'bold', color: 'var(--primary-color)', textDecoration: 'none' }}>
+            MA Collection
           </Link>
         </div>
         <button className="ul-sidebar-closer">
@@ -19,11 +18,11 @@ export default function Sidebar() {
       <div className="ul-sidebar-header-nav-wrapper d-block d-lg-none"></div>
 
       <div className="ul-sidebar-about d-none d-lg-block">
-        <span className="title">About Us</span>
+        <span className="title">About MA Collection</span>
         <p className="mb-0">
-          Ghana&apos;s premier online fashion destination. Shop the latest styles in clothing,
-          footwear, accessories and more — all delivered to your doorstep across Accra, Kumasi,
-          Tamale and beyond.
+          Real, wearable fashion for work, life & every moment. We design quality pieces — workwear, 
+          casuals, and occasion wear — that fit your life, not just your body. Shop authentic 
+          Ghanaian fashion delivered to your door.
         </p>
       </div>
 

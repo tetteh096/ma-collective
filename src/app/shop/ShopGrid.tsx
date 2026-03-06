@@ -92,7 +92,7 @@ export default function ShopGrid({ initialCategory, initialPage, query, sort, ca
   }
 
   function handleAddToCart(p: Product) {
-    addItem({ id: String(p.id), slug: p.slug, name: p.name, price: p.sellingPrice, image: p.imageUrl ?? '', quantity: 1 });
+    addItem({ id: String(p.id), slug: p.slug, name: p.name, price: p.sellingPrice, costPrice: p.costPrice, image: p.imageUrl ?? '', quantity: 1 });
     openCart();
   }
 
@@ -311,7 +311,7 @@ export default function ShopGrid({ initialCategory, initialPage, query, sort, ca
             {loading && (
               <div className="row g-4">
                 {Array.from({ length: PER_PAGE }).map((_, i) => (
-                  <div key={i} className="col-6 col-xl-4">
+                  <div key={i} className="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div style={{ borderRadius: 12, background: '#f0f0f0', height: 380 }} />
                   </div>
                 ))}
@@ -352,7 +352,7 @@ export default function ShopGrid({ initialCategory, initialPage, query, sort, ca
             {!loading && !error && displayed.length > 0 && (
               <div className="row g-4">
                 {displayed.map((p) => (
-                  <div key={p.id} className="col-6 col-xl-4">
+                  <div key={p.id} className="col-lg-4 col-md-6 col-sm-6 col-12">
                     <div style={{ borderRadius: 12, overflow: 'hidden', boxShadow: '0 2px 12px rgba(0,0,0,.06)', background: '#fff', height: '100%', display: 'flex', flexDirection: 'column' }}>
 
                       {/* Image */}
@@ -373,7 +373,7 @@ export default function ShopGrid({ initialCategory, initialPage, query, sort, ca
                           </span>
                         )}
                         <button
-                          onClick={() => toggle({ id: String(p.id), slug: p.slug, name: p.name, price: p.sellingPrice, image: p.imageUrl ?? '' })}
+                          onClick={() => toggle({ id: String(p.id), slug: p.slug, name: p.name, price: p.sellingPrice, costPrice: p.costPrice, image: p.imageUrl ?? '' })}
                           aria-label="Toggle wishlist"
                           style={{ position: 'absolute', top: 12, right: 12, background: '#fff', border: 'none', borderRadius: '50%', width: 36, height: 36, display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', boxShadow: '0 2px 8px rgba(0,0,0,.12)', color: isInWishlist(String(p.id)) ? '#e85d04' : '#888' }}
                         >

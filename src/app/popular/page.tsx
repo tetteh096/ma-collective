@@ -73,7 +73,7 @@ export default async function PopularPage({ searchParams }: Props) {
             {/* Products Grid */}
             <div className="row g-4">
               {productsData.items.map((p) => (
-                <div key={p.id} className="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div key={p.id} className="col-lg-4 col-md-6 col-sm-6 col-12">
                   <ProductCard product={p} />
                 </div>
               ))}

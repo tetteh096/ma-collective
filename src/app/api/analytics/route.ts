@@ -89,23 +89,27 @@ export async function GET(request: NextRequest) {
 
   // ── Top products ─────────────────────────────────────────────────
   if (type === 'top-products') {
+    const REVENUE_STATUSES = ['pending', 'processing', 'shipped', 'delivered'];
     const items = await prisma.orderItem.groupBy({
       by: ['productId', 'productName'],
+      where: {
+        order: { status: { in: REVENUE_STATUSES } }
+      },
       _sum: { subtotal: true, quantity: true, costPrice: true },
       orderBy: { _sum: { subtotal: 'desc' } },
       take: limit,
     });
 
-    const data = items.map((i) => ({
+    const products = items.map((i) => ({
       productId:   i.productId,
-      productName: i.productName,
-      units:       i._sum.quantity ?? 0,
+      name:        i.productName,
+      unitsSold:   i._sum.quantity ?? 0,
       revenue:     +(Number(i._sum.subtotal) ?? 0).toFixed(2),
       cost:        +(Number(i._sum.costPrice ?? 0) * (i._sum.quantity ?? 0)).toFixed(2),
       profit:      +((Number(i._sum.subtotal ?? 0)) - (Number(i._sum.costPrice ?? 0) * (i._sum.quantity ?? 0))).toFixed(2),
     }));
 
-    return NextResponse.json({ data });
+    return NextResponse.json({ products });
   }
 
   // ── Categories breakdown ─────────────────────────────────────────
@@ -130,20 +134,33 @@ export async function GET(request: NextRequest) {
   // ── Traffic / referrers ──────────────────────────────────────────
   if (type === 'traffic') {
     const since = getPeriodStart(period);
-    const views = await prisma.productView.groupBy({
-      by: ['referrer'],
+    
+    // Group by product to show which products are being viewed
+    const productViews = await prisma.productView.groupBy({
+      by: ['productId'],
       where: { viewedAt: { gte: since } },
       _count: { id: true },
       orderBy: { _count: { id: 'desc' } },
+      take: limit,
     });
+
+    // Fetch product names
+    const productIds = productViews.map(v => v.productId);
+    const products = await prisma.product.findMany({
+      where: { id: { in: productIds } },
+      select: { id: true, name: true },
+    });
+
+    const productMap = Object.fromEntries(products.map(p => [p.id, p.name]));
 
     const totalViews = await prisma.productView.count({
       where: { viewedAt: { gte: since } },
     });
 
-    const data = views.map((v) => ({
-      referrer: v.referrer,
-      views:    v._count.id,
+    const data = productViews.map((v) => ({
+      productId: v.productId,
+      productName: productMap[v.productId] || 'Unknown Product',
+      views: v._count.id,
     }));
 
     return NextResponse.json({ data, totalViews, period });

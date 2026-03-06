@@ -46,7 +46,7 @@ export default function AdminDashboard() {
       .then(setOverview)
       .catch(console.error);
 
-    fetch('/api/orders?limit=6')
+    fetch('/api/orders?limit=10')
       .then(r => r.json())
       .then((d) => setOrders(d.orders ?? []))
       .catch(console.error);
@@ -117,7 +117,7 @@ export default function AdminDashboard() {
                 ) : (
                   orders.map((o) => (
                     <tr key={o.id}>
-                      <td><strong>{o.orderNumber}</strong></td>
+                      <td><strong>{String(o.orderNumber).substring(0, 8).toUpperCase()}</strong></td>
                       <td>{o.customerName}</td>
                       <td>{fmt(o.total)}</td>
                       <td>

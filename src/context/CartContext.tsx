@@ -6,7 +6,8 @@ export interface CartItem {
   id: string;
   slug: string;
   name: string;
-  price: number; // GHS
+  price: number;     // selling price (GHS)
+  costPrice: number; // actual cost price (GHS)
   image: string;
   quantity: number;
   size?: string;

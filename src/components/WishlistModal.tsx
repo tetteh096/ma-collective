@@ -27,6 +27,7 @@ export default function WishlistModal() {
       slug: item.slug,
       name: item.name,
       price: item.price,
+      costPrice: item.costPrice,
       image: item.image,
       quantity: 1,
     });

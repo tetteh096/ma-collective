@@ -13,6 +13,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const ulHeaderNavMobileWrapper = document.querySelector(".ul-sidebar-header-nav-wrapper");
         const ulHeaderNavOgWrapper = document.querySelector(".ul-header-nav-wrapper");
 
+        function closeSidebar() {
+            ulSidebar.classList.remove("active");
+        }
+
         function updateMenuPosition() {
             if (window.innerWidth < 992) {
                 ulHeaderNavMobileWrapper.appendChild(ulMobileMenuContent);
@@ -33,9 +37,35 @@ document.addEventListener("DOMContentLoaded", (event) => {
             ulSidebar.classList.add("active");
         });
 
-        ulSidebarCloser.addEventListener("click", () => {
-            ulSidebar.classList.remove("active");
+        ulSidebarCloser.addEventListener("click", closeSidebar);
+
+        // Close sidebar when clicking on sidebar backdrop
+        ulSidebar.addEventListener("click", (e) => {
+            if (e.target === ulSidebar) {
+                closeSidebar();
+            }
         });
+
+        // Close sidebar when clicking on any link in the sidebar
+        const sidebarLinks = ulSidebar.querySelectorAll("a");
+        sidebarLinks.forEach((link) => {
+            link.addEventListener("click", () => {
+                // Close immediately
+                closeSidebar();
+                // Also close after a slight delay to ensure Next.js routing completes
+                setTimeout(closeSidebar, 100);
+            });
+        });
+
+        // Watch for Next.js route changes and close sidebar
+        let lastPathname = window.location.pathname;
+        const observer = new MutationObserver(() => {
+            if (window.location.pathname !== lastPathname) {
+                lastPathname = window.location.pathname;
+                closeSidebar();
+            }
+        });
+        observer.observe(document.documentElement, { subtree: true, childList: true });
 
 
         // menu dropdown/submenu in mobile

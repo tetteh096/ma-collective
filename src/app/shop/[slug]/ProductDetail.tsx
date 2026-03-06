@@ -29,6 +29,7 @@ export default function ProductDetail({ product, related }: Props) {
       slug: product.slug,
       name: product.name,
       price: product.sellingPrice,
+      costPrice: product.costPrice,
       image: product.imageUrl ?? '',
       quantity: qty,
       size: selectedSize || undefined,
@@ -221,7 +222,7 @@ export default function ProductDetail({ product, related }: Props) {
 
               {/* Wishlist */}
               <button
-                onClick={() => toggle({ id: String(product.id), slug: product.slug, name: product.name, price: product.sellingPrice, image: product.imageUrl ?? '' })}
+                onClick={() => toggle({ id: String(product.id), slug: product.slug, name: product.name, price: product.sellingPrice, costPrice: product.costPrice, image: product.imageUrl ?? '' })}
                 style={{
                   width: 48, height: 48, borderRadius: 8, border: '1px solid #ddd', background: '#fff',
                   cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center',

@@ -46,7 +46,7 @@ export default function AdminAnalyticsPage() {
         setSales(sl.data ?? []);
         setCategories(cat.data ?? []);
         setTopProducts((tp.data ?? []).map((p: any) => ({ ...p, name: p.productName, unitsSold: p.units })));
-        setTraffic((tr.data ?? []).map((t: any) => ({ source: t.referrer ?? 'direct', count: t.views })));
+        setTraffic((tr.data ?? []).map((t: any) => ({ source: t.productName || 'Unknown', count: t.views })));
       })
       .catch(console.error)
       .finally(() => setLoading(false));
@@ -208,14 +208,14 @@ export default function AdminAnalyticsPage() {
               </div>
             </div>
 
-            {/* Traffic sources */}
+            {/* Product views */}
             <div className="ad-card">
               <div className="ad-card-header">
-                <span className="ad-card-title">Traffic Sources</span>
+                <span className="ad-card-title">Most Viewed Products</span>
               </div>
               <div className="ad-card-body">
                 {traffic.length === 0 ? (
-                  <div className="ad-empty" style={{ padding: 32 }}>No traffic data</div>
+                  <div className="ad-empty" style={{ padding: 32 }}>No product views yet</div>
                 ) : (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                     {traffic.map((t: any, i: number) => {
@@ -224,12 +224,8 @@ export default function AdminAnalyticsPage() {
                       return (
                         <div key={i}>
                           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4, fontSize: 13 }}>
-                            <span style={{ textTransform: 'capitalize', fontWeight: 500 }}>
-                              {t.source === 'direct' ? 'Direct' :
-                               t.source === 'whatsapp' ? 'WhatsApp' :
-                               t.source === 'facebook' ? 'Facebook' :
-                               t.source === 'instagram' ? 'Instagram' :
-                               t.source}
+                            <span style={{ fontWeight: 500 }}>
+                              {t.source}
                             </span>
                             <span style={{ color: '#6b7280' }}>{t.count} views ({pct}%)</span>
                           </div>

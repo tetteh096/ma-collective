@@ -80,9 +80,17 @@ export async function DELETE(
 ) {
   const { slug } = await params;
   try {
-    await prisma.product.delete({ where: { slug } });
+    const product = await prisma.product.findUnique({ where: { slug }, select: { id: true } });
+    if (!product) return NextResponse.json({ error: 'Product not found' }, { status: 404 });
+
+    // Delete related records before deleting the product
+    await prisma.productView.deleteMany({ where: { productId: product.id } });
+    await prisma.orderItem.deleteMany({ where: { productId: product.id } });
+
+    await prisma.product.delete({ where: { id: product.id } });
     return NextResponse.json({ success: true });
-  } catch {
-    return NextResponse.json({ error: 'Product not found' }, { status: 404 });
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : String(err);
+    return NextResponse.json({ error: msg }, { status: 500 });
   }
 }

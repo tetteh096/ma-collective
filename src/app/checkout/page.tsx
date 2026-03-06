@@ -142,7 +142,7 @@ export default function CheckoutPage() {
             productId:    /^\d+$/.test(String(item.id)) ? Number(item.id) : null,
             productName:  item.name,
             quantity:     item.quantity,
-            costPrice:    item.price,
+            costPrice:    item.costPrice,
             sellingPrice: item.price,
           })),
         }),

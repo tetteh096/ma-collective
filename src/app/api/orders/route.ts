@@ -47,9 +47,16 @@ export async function GET(request: NextRequest) {
 
   // Convert Decimal fields to numbers for JSON serialization
   const ordersWithNumbers = orders.map(o => ({
-    ...o,
+    id: o.id,
+    uuid: o.uuid,
+    orderNumber: o.uuid, // Use UUID as order number
+    customerName: o.customerName,
+    customerEmail: o.customerEmail,
+    status: o.status,
+    total: Number(o.totalAmount), // Map totalAmount → total for API consumers
     totalAmount: Number(o.totalAmount),
     discountAmount: Number(o.discountAmount),
+    createdAt: o.createdAt,
     items: o.items.map(i => ({
       ...i,
       costPrice: Number(i.costPrice),
